@@ -4,9 +4,10 @@ const e = require('express');
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
+require('dotenv').config();
 
 const app = express();
-const port = process.env.port|| 7000;
+const PORT = process.env.port|| 7000;
 
 const dbConnect = mysql.createConnection({
     host: 'localhost',
@@ -77,6 +78,6 @@ res.json(result);
 });
 
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log('server is runing ');
 });
